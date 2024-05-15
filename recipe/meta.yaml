@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/BoldingBruggeman/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2815ba7c5d845bb3de065cd418cd274f88ed441200ff665bd82c977776bf46c4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xmlstore-{{ version }}.tar.gz
+  sha256: 53c73c1e36fa55f2f68a0e6931678b90d652be958676d48c35811093eee00567
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:

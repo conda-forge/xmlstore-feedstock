@@ -6,28 +6,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xmlstore-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xmlstore-{{ version }}.tar.gz
   sha256: aa758717e330cc6b7d72e41d1125d062531da3ff724551c3683b9d0b13425fb3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - hatchling
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
     - xmlstore
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 

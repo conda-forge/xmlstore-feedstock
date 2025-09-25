@@ -1,5 +1,5 @@
 {% set name = "xmlstore" %}
-{% set version = "0.9.15" %}
+{% set version = "0.9.16" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xmlstore-{{ version }}.tar.gz
-  sha256: 2b534103f0161a5ef7e5958beffadb262922524eb25bd07846593e8b89c6a3d6
+  sha256: 48abd519e72c7df1adc8352a0b8856c2a607c3ecc84d877f31b279cb1888c732
 
 build:
   noarch: python
